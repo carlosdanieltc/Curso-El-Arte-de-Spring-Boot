@@ -7,11 +7,11 @@ import lombok.extern.java.Log;
 @Log
 public class GauntletServiceImpl implements GauntletService {
 
-    public Stone reality = new RealityStone();
+    private final Stone reality = new RealityStone();
 
     @Override
     public void useGauntlet(String stoneName) {
-        log.info("Use stone:" + reality);
+        log.info("Use stone: " + reality);
     }
 
 }
