@@ -1,5 +1,14 @@
 package com.debuggeandoideas.models;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 public abstract class Stone {
 
     String color;
@@ -8,51 +17,16 @@ public abstract class Stone {
     Integer energyLevel;
     Integer numberOfSides;
 
-    public Stone(String color, String name, String location, Integer energyLevel, Integer numberOfSides) {
+    private static final int NUMBER_SIDES = 6;
+
+    public Stone(String color, String name, String location, Integer energyLevel) {
         this.color = color;
         this.name = name;
         this.location = location;
         this.energyLevel = energyLevel;
-        this.numberOfSides = numberOfSides;
+        this.numberOfSides = NUMBER_SIDES;
     }
 
-    public String getColor() {
-        return color;
-    }
+    public abstract void usePower();
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public Integer getEnergyLevel() {
-        return energyLevel;
-    }
-
-    public void setEnergyLevel(Integer energyLevel) {
-        this.energyLevel = energyLevel;
-    }
-
-    public Integer getNumberOfSides() {
-        return numberOfSides;
-    }
-
-    public void setNumberOfSides(Integer numberOfSides) {
-        this.numberOfSides = numberOfSides;
-    }
 }
