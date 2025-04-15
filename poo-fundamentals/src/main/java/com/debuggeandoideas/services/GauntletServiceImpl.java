@@ -2,12 +2,14 @@ package com.debuggeandoideas.services;
 
 import com.debuggeandoideas.models.RealityStone;
 import com.debuggeandoideas.models.Stone;
+import com.debuggeandoideas.singletons.MindStoneSingleton;
+
 import lombok.extern.java.Log;
 
 @Log
 public class GauntletServiceImpl implements GauntletService {
 
-    private final Stone reality = new RealityStone();
+    private final Stone reality = MindStoneSingleton.getInstance();
 
     @Override
     public void useGauntlet(String stoneName) {
