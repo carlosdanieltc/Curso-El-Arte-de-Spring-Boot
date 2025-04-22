@@ -12,20 +12,21 @@ import com.debuggeandoideas.services.GauntletServiceImpl;
 public class Main {
     public static void main(String[] args) {
 
-        System.setProperty("scope", "prototype");
+        System.setProperty("scope", "singleton");
+        var realityfactory = new RealityStoneFactory();
+        var timefactory = new TimeStoneFactory();
 
-        final var timeStoneFactory = new TimeStoneFactory();
-        var timeStone = timeStoneFactory.createStone();
+        final var gauntletService = new GauntletServiceImpl();
 
-        final var powerStoneFactory = new PowerStoneFactory();
-        var powerStone = powerStoneFactory.createStone();
+        // DI by Setter
+        gauntletService.setReality(realityfactory.createStone());
+        gauntletService.setTime(timefactory.createStone());
 
-        final var realityStoneFactory = new RealityStoneFactory();
-        var realityStone = realityStoneFactory.createStone();
+        gauntletService.useGauntlet("reality");
+        gauntletService.useGauntlet("time");
+        gauntletService.useGauntlet("soul");
 
-        System.out.println(timeStone);
-        System.out.println(powerStone);
-        System.out.println(realityStone);
+        gauntletService.useFullPower();
         
     }
 }
