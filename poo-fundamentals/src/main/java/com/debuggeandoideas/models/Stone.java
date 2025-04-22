@@ -1,5 +1,7 @@
 package com.debuggeandoideas.models;
 
+import java.io.Serializable;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +11,7 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode
 @ToString
-public abstract class Stone {
+public abstract class Stone implements Serializable{
 
     protected String color;
     protected String name;
