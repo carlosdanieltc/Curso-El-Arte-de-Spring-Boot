@@ -4,21 +4,28 @@ import com.debuggeandoideas.models.RealityStone;
 import com.debuggeandoideas.models.Stone;
 import com.debuggeandoideas.singletons.MindStoneSingleton;
 
+import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.java.Log;
 
 @Log
-@Setter
+@Getter
 public class GauntletServiceImpl implements GauntletService {
 
-    private Stone reality;
-    private Stone soul;
-    private Stone mind;
-    private Stone power;
-    private Stone space;
-    private Stone time;
+    private final Stone reality;
+    private final Stone soul;
+    private final Stone mind;
+    private final Stone power;
+    private final Stone space;
+    private final Stone time;
 
-    public GauntletServiceImpl(){
+    public GauntletServiceImpl(Stone mind, Stone power, Stone reality, Stone soul, Stone space, Stone time){
+        this.reality = reality;
+        this.soul = soul;
+        this.mind = mind;
+        this.power = power;
+        this.space = space;
+        this.time = time;
     }
 
     @Override
