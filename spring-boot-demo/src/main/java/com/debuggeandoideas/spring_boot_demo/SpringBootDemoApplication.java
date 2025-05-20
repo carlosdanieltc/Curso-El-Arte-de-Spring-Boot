@@ -1,4 +1,4 @@
-package com.carlos.spring_boot_demo;
+package com.debuggeandoideas.spring_boot_demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
