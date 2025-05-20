@@ -2,6 +2,7 @@ package com.debuggeandoideas.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import com.debuggeandoideas.models.MindStone;
 import com.debuggeandoideas.models.PowerStone;
@@ -20,6 +21,7 @@ import lombok.extern.java.Log;
 
 @Log
 @Getter
+@Component
 public class GauntletServiceImpl implements GauntletService {
 
     private final Stone reality;

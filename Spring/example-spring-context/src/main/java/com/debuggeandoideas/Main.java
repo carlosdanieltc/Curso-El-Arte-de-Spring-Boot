@@ -1,8 +1,10 @@
 package com.debuggeandoideas;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.debuggeandoideas.beans.HelloWorld;
+import com.debuggeandoideas.configs.StoneConfigs;
 import com.debuggeandoideas.models.MindStone;
 import com.debuggeandoideas.models.PowerStone;
 import com.debuggeandoideas.models.RealityStone;
@@ -14,12 +16,18 @@ import com.debuggeandoideas.services.GauntletServiceImpl;
 
 public class Main {
     public static void main(String[] args) {
-        
-        final ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("stones.xml");
-        final GauntletServiceImpl gauntletService = applicationContext.getBean("gauntlet", GauntletServiceImpl.class);
 
-        gauntletService.useGauntlet("reality");
-        gauntletService.useGauntlet("power");
+        final AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(StoneConfigs.class);
+
+        final GauntletServiceImpl gauntletService = applicationContext.getBean(GauntletServiceImpl.class);
+
+        gauntletService.useFullPower();
+        
+        // final ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("stones.xml");
+        // final GauntletServiceImpl gauntletService = applicationContext.getBean("gauntlet", GauntletServiceImpl.class);
+
+        // gauntletService.useGauntlet("reality");
+        // gauntletService.useGauntlet("power");
 
         // final ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("stones.xml");
 
@@ -35,6 +43,6 @@ public class Main {
         // gauntletService.useFullPower();
         // gauntletService.useGauntlet("mind");
 
-        applicationContext.close();
+        // applicationContext.close();
     }
 }
