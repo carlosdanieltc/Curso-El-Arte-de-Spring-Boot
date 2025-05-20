@@ -1,5 +1,8 @@
 package com.debuggeandoideas.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 import com.debuggeandoideas.models.MindStone;
 import com.debuggeandoideas.models.PowerStone;
 import com.debuggeandoideas.models.RealityStone;
@@ -16,16 +19,31 @@ import lombok.Setter;
 import lombok.extern.java.Log;
 
 @Log
-@AllArgsConstructor
 @Getter
 public class GauntletServiceImpl implements GauntletService {
 
-    private final RealityStone reality;
-    private final SoulStone soul;
-    private final MindStone mind;
-    private final PowerStone power;
-    private final SpaceStone space;
-    private final TimeStone time;
+    private final Stone reality;
+    private final Stone soul;
+    private final Stone mind;
+    private final Stone power;
+    private final Stone space;
+    private final Stone time;
+
+    @Autowired
+    public GauntletServiceImpl(
+        @Qualifier("reality") Stone reality, 
+        @Qualifier("soul") Stone soul, 
+        @Qualifier("mind") Stone mind, 
+        @Qualifier("power") Stone power,
+        @Qualifier("space") Stone space,
+        @Qualifier("time") Stone time) {
+            this.reality = reality;
+            this.soul = soul;
+            this.mind = mind;
+            this.power = power;
+            this.space = space;
+            this.time = time;
+    }
 
     @Override
     public void useGauntlet(String stoneName) {

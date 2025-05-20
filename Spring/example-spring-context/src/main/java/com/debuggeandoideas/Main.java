@@ -14,20 +14,26 @@ import com.debuggeandoideas.services.GauntletServiceImpl;
 
 public class Main {
     public static void main(String[] args) {
-
+        
         final ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("stones.xml");
+        final GauntletServiceImpl gauntletService = applicationContext.getBean("gauntlet", GauntletServiceImpl.class);
 
-        final MindStone mind = applicationContext.getBean("mind", MindStone.class);
-        final PowerStone power = applicationContext.getBean("power", PowerStone.class);
-        final RealityStone reality = applicationContext.getBean("reality", RealityStone.class);
-        final SoulStone soul = applicationContext.getBean("soul", SoulStone.class);
-        final SpaceStone space = applicationContext.getBean("space", SpaceStone.class);
-        final TimeStone time = applicationContext.getBean("time", TimeStone.class);
+        gauntletService.useGauntlet("reality");
+        gauntletService.useGauntlet("power");
 
-        final GauntletService gauntletService = new GauntletServiceImpl(reality, soul, mind, power, space, time);
+        // final ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("stones.xml");
 
-        gauntletService.useFullPower();
-        gauntletService.useGauntlet("mind");
+        // final MindStone mind = applicationContext.getBean("mind", MindStone.class);
+        // final PowerStone power = applicationContext.getBean("power", PowerStone.class);
+        // final RealityStone reality = applicationContext.getBean("reality", RealityStone.class);
+        // final SoulStone soul = applicationContext.getBean("soul", SoulStone.class);
+        // final SpaceStone space = applicationContext.getBean("space", SpaceStone.class);
+        // final TimeStone time = applicationContext.getBean("time", TimeStone.class);
+
+        // final GauntletService gauntletService = new GauntletServiceImpl(reality, soul, mind, power, space, time);
+
+        // gauntletService.useFullPower();
+        // gauntletService.useGauntlet("mind");
 
         applicationContext.close();
     }
