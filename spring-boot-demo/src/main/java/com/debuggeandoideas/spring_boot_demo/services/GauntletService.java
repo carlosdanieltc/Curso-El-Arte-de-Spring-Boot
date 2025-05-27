@@ -1,4 +1,4 @@
-package com.debuggeandoideas.services;
+package com.debuggeandoideas.spring_boot_demo.services;
 
 public interface GauntletService {
 

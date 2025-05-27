@@ -8,7 +8,7 @@ import lombok.extern.java.Log;
 public class RealityStone extends Stone{
 
     private static final String COLOR = "Red";
-    private static final String  NAME = "reality Stone";
+    private static final String  NAME = "Reality Stone";
     private static final String  LOCATION = "Asgard";
     private static final int  ENERGY_LAVEL = 6;
 

@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 import com.debuggeandoideas.spring_boot_demo.models.Stone;
 
 import lombok.Getter;
-import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
-@Log
+@Slf4j
 @Getter
 public class GauntletServiceImpl implements GauntletService {
 
