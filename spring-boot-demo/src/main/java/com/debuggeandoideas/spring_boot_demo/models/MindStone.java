@@ -7,13 +7,8 @@ import lombok.extern.java.Log;
 @Log
 public class MindStone extends Stone{
 
-    private static final String COLOR = "Yellow";
-    private static final String  NAME = "Mind Stone";
-    private static final String  LOCATION = "Scepter";
-    private static final int  ENERGY_LAVEL = 4;
-
-    public MindStone() {
-        super(COLOR, NAME, LOCATION, ENERGY_LAVEL);
+    public MindStone(String colorProperty, String nameProperty, String locationProperty, Integer energyLevelProperty) {
+        super(colorProperty, nameProperty, locationProperty, energyLevelProperty);
     }
 
     @Override

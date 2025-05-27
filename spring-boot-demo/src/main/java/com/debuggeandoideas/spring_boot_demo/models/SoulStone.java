@@ -7,14 +7,8 @@ import lombok.extern.java.Log;
 @Log
 public class SoulStone extends Stone{
 
-    private static final String COLOR = "Orange";
-    private static final String  NAME = "Soul Stone";
-    private static final String  LOCATION = "Vormir";
-    private static final int  ENERGY_LAVEL = 3;
-
-    public SoulStone() {
-        super(COLOR, NAME, LOCATION, ENERGY_LAVEL);
-
+    public SoulStone(String colorProperty, String nameProperty, String locationProperty, Integer energyLevelProperty) {
+        super(colorProperty, nameProperty, locationProperty, energyLevelProperty);
     }
 
     @Override

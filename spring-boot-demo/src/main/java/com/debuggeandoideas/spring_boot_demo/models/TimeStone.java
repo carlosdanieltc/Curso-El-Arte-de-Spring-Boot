@@ -7,13 +7,8 @@ import lombok.extern.java.Log;
 @Log
 public class TimeStone extends Stone {
 
-    private static final String COLOR = "Green";
-    private static final String  NAME = "Time Stone";
-    private static final String  LOCATION = "Agamotto";
-    private static final int  ENERGY_LAVEL = 9;
-
-    public TimeStone() {
-        super(COLOR, NAME, LOCATION, ENERGY_LAVEL);
+    public TimeStone(String colorProperty, String nameProperty, String locationProperty, Integer energyLevelProperty) {
+        super(colorProperty, nameProperty, locationProperty, energyLevelProperty);
     }
 
     @Override
