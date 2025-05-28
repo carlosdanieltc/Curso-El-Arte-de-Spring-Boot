@@ -2,9 +2,17 @@ package com.debuggeandoideas.spring_boot_demo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import com.debuggeandoideas.spring_boot_demo.models.MindStone;
+import com.debuggeandoideas.spring_boot_demo.models.PowerStone;
+import com.debuggeandoideas.spring_boot_demo.models.RealityStone;
+import com.debuggeandoideas.spring_boot_demo.models.SoulStone;
+import com.debuggeandoideas.spring_boot_demo.models.SpaceStone;
 import com.debuggeandoideas.spring_boot_demo.models.Stone;
+import com.debuggeandoideas.spring_boot_demo.models.TimeStone;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -12,6 +20,15 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 @Getter
+@Primary
+@ConditionalOnBean( value = {
+    MindStone.class,
+    PowerStone.class,
+    RealityStone.class,
+    SoulStone.class,
+    SpaceStone.class,
+    TimeStone.class
+})
 public class GauntletServiceImpl implements GauntletService {
 
     private final Stone reality;

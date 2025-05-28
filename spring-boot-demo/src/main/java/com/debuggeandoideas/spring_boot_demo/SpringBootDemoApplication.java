@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.PropertySource;
 
+import com.debuggeandoideas.spring_boot_demo.components.ThanosComponent;
 import com.debuggeandoideas.spring_boot_demo.models.Stone;
 import com.debuggeandoideas.spring_boot_demo.services.GauntletService;
 
@@ -20,16 +21,7 @@ public class SpringBootDemoApplication implements CommandLineRunner{
 	// private String value;
 
 	@Autowired
-	@Qualifier(value= "reality")
-	private Stone realityStone;
-
-	@Autowired
-	@Qualifier(value= "mind")
-	private Stone mindStone;
-
-	@Autowired
-	@Qualifier(value= "space")
-	private Stone spaceStone;
+	private ThanosComponent thanos;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootDemoApplication.class, args);
@@ -37,9 +29,7 @@ public class SpringBootDemoApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(this.realityStone.toString());
-		System.out.println(this.mindStone.toString());
-		System.out.println(this.spaceStone.toString());
+		thanos.snap();
 	}
 
 }

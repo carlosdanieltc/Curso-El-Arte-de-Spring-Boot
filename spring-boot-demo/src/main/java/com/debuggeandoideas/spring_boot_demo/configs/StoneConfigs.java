@@ -16,6 +16,9 @@ import com.debuggeandoideas.spring_boot_demo.models.SoulStone;
 import com.debuggeandoideas.spring_boot_demo.models.SpaceStone;
 import com.debuggeandoideas.spring_boot_demo.models.TimeStone;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Configuration
 //@ComponentScan(basePackages = "com.debuggeandoideas")
 @PropertySources({
