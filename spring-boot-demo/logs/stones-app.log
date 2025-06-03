@@ -895,3 +895,19 @@ Action:
 
 Update your configuration so that ThanosModel is defined via @ConfigurationPropertiesScan or @EnableConfigurationProperties.
 
+2025-05-28T11:45:28.366+02:00  INFO 18676 --- [spring-boot-demo] [restartedMain] c.d.s.SpringBootDemoApplication          : Starting SpringBootDemoApplication using Java 21.0.6 with PID 18676 (D:\Develop\Curso El Arte de Spring Boot\spring-boot-demo\target\classes started by carlo in D:\Develop\Curso El Arte de Spring Boot\spring-boot-demo)
+2025-05-28T11:45:28.369+02:00  INFO 18676 --- [spring-boot-demo] [restartedMain] c.d.s.SpringBootDemoApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-05-28T11:45:28.435+02:00  INFO 18676 --- [spring-boot-demo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-28T11:45:28.435+02:00  INFO 18676 --- [spring-boot-demo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-28T11:45:29.572+02:00  INFO 18676 --- [spring-boot-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2025-05-28T11:45:29.590+02:00  INFO 18676 --- [spring-boot-demo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-28T11:45:29.590+02:00  INFO 18676 --- [spring-boot-demo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-28T11:45:29.639+02:00  INFO 18676 --- [spring-boot-demo] [restartedMain] o.a.c.c.C.[.[localhost].[/stones]        : Initializing Spring embedded WebApplicationContext
+2025-05-28T11:45:29.640+02:00  INFO 18676 --- [spring-boot-demo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1203 ms
+2025-05-28T11:45:29.739+02:00  INFO 18676 --- [spring-boot-demo] [restartedMain] c.d.s.components.ThanosComponent         : Loading Thanos with configs: ThanosModel(planet=Titan, galaxy=Andromeda, defaultDestructionLevel=788 )
+2025-05-28T11:45:30.064+02:00  INFO 18676 --- [spring-boot-demo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-28T11:45:30.156+02:00  INFO 18676 --- [spring-boot-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/stones'
+2025-05-28T11:45:30.166+02:00  INFO 18676 --- [spring-boot-demo] [restartedMain] c.d.s.SpringBootDemoApplication          : Started SpringBootDemoApplication in 2.317 seconds (process running for 2.733)
+2025-05-28T11:45:30.282+02:00  INFO 18676 --- [spring-boot-demo] [restartedMain] c.d.s.components.ThanosComponent         : Thanos is using the gauntlet to perform snap in China
+2025-05-28T11:45:30.282+02:00  INFO 18676 --- [spring-boot-demo] [restartedMain] c.d.s.services.GauntletServiceImpl       : USING ALL POWER
+2025-05-28T11:45:30.283+02:00  INFO 18676 --- [spring-boot-demo] [restartedMain] c.d.s.components.ThanosComponent         : Thanos is get make danger points 353
