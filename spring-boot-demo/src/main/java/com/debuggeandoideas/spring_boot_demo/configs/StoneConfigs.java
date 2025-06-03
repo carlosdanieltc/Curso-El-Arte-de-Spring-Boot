@@ -63,42 +63,42 @@ public class StoneConfigs {
     @Value("${stone.space.location}") private String locationSpace;
     @Value("${stone.space.energy-level}") private Integer energySpace;
 
-    @Bean(name = "mind")
+    @Bean(name = "mind", initMethod = "sendMind")
     @Scope("prototype")
     @ConditionalOnProperty(name = "stones.mind.enabled",havingValue = "true")
     public MindStone mindStone() {
         return new MindStone(colorMind, nameMind, locationMind, energyMind);
     }
 
-    @Bean(name = "power")
+    @Bean(name = "power", initMethod = "sendPower")
     @Scope("prototype")
     @ConditionalOnProperty(name = "stones.power.enabled",havingValue = "true")
     public PowerStone powerStone() {
         return new PowerStone(colorPower, namePower, locationPower, energyPower);
     }
 
-    @Bean(name = "reality")
+    @Bean(name = "reality", initMethod = "sendReality")
     @Scope("prototype")
     @ConditionalOnProperty(name = "stones.reality.enabled",havingValue = "true")
     public RealityStone realityStone() {
         return new RealityStone(colorReality, nameReality, locationReality, energyReality);
     }
 
-    @Bean(name = "time")
+    @Bean(name = "time", initMethod = "sendTime")
     @Scope("prototype")
     @ConditionalOnProperty(name = "stones.time.enabled",havingValue = "true")
     public TimeStone timeStone() {
         return new TimeStone(colorTime, nameTime, locationTime, energyTime);
     }
 
-    @Bean(name = "soul")
+    @Bean(name = "soul", initMethod = "sendSoul")
     @Scope("prototype")
     @ConditionalOnProperty(name = "stones.soul.enabled",havingValue = "true")
     public SoulStone soulStone() {
         return new SoulStone(colorSoul, nameSoul, locationSoul, energySoul);
     }
 
-    @Bean(name = "space")
+    @Bean(name = "space", initMethod = "sendSpace")
     @Scope("prototype")
     @ConditionalOnProperty(name = "stones.space.enabled", havingValue = "true")
     public SpaceStone spaceStone() {

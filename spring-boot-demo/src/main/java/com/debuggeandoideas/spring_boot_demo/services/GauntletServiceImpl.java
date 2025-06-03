@@ -13,7 +13,9 @@ import com.debuggeandoideas.spring_boot_demo.models.SoulStone;
 import com.debuggeandoideas.spring_boot_demo.models.SpaceStone;
 import com.debuggeandoideas.spring_boot_demo.models.Stone;
 import com.debuggeandoideas.spring_boot_demo.models.TimeStone;
+import com.debuggeandoideas.spring_boot_demo.utils.AvengerNotifier;
 
+import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -52,6 +54,11 @@ public class GauntletServiceImpl implements GauntletService {
             this.power = power;
             this.space = space;
             this.time = time;
+    }
+
+    @PostConstruct
+    public void init(){
+        AvengerNotifier.sendNotification(this.getClass());
     }
 
     @Override

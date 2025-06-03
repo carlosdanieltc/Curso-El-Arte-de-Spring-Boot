@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.debuggeandoideas.spring_boot_demo.models.ThanosModel;
 import com.debuggeandoideas.spring_boot_demo.services.GauntletService;
+import com.debuggeandoideas.spring_boot_demo.utils.AvengerNotifier;
 import com.github.javafaker.Faker;
 
 import jakarta.annotation.PostConstruct;
@@ -29,8 +30,9 @@ public class ThanosComponent {
     @PostConstruct
     public void init(){
         log.info("Loading Thanos with configs: {}", thanosModel);
+        AvengerNotifier.sendNotification(this.getClass());
     }
-
+    
     public void snap(){
 
         final var faker = new Faker();
