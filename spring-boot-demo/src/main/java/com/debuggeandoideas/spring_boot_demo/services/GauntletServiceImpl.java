@@ -3,6 +3,7 @@ package com.debuggeandoideas.spring_boot_demo.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ import com.debuggeandoideas.spring_boot_demo.models.TimeStone;
 import com.debuggeandoideas.spring_boot_demo.utils.AvengerNotifier;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,6 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Getter
 @Primary
+@Lazy
 @ConditionalOnBean( value = {
     MindStone.class,
     PowerStone.class,
@@ -81,6 +84,11 @@ public class GauntletServiceImpl implements GauntletService {
         }else{
             throw new IllegalStateException("Cant be using full power because service have field null");
         }
+    }
+
+    @PreDestroy
+    public void destroy(){
+        AvengerNotifier.sendNotification("Gauntlet was destroyed");
     }
 
 }

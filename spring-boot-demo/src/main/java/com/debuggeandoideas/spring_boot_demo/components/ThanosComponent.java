@@ -3,6 +3,7 @@ package com.debuggeandoideas.spring_boot_demo.components;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import com.debuggeandoideas.spring_boot_demo.models.ThanosModel;
@@ -11,12 +12,13 @@ import com.debuggeandoideas.spring_boot_demo.utils.AvengerNotifier;
 import com.github.javafaker.Faker;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
 @ConditionalOnClass(value = Faker.class)
-
+@Lazy
 public class ThanosComponent {
 
     private final GauntletService gauntletService;
@@ -45,5 +47,10 @@ public class ThanosComponent {
         final var impactPoints = faker.random().nextInt(1000);
 
         log.info("Thanos is get make danger points {}", impactPoints);
+    }
+
+    @PreDestroy
+    public void destroy(){
+        log.warn("BATTLE END");
     }
 }

@@ -17,4 +17,8 @@ public class AvengerNotifier {
             log.warn("DANGER START BATTLE!!");
         }
     }
+
+    public static void sendNotification(String msg){
+        log.info(msg);
+    }
 }
